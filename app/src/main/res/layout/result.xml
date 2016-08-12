@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/list_num"
+        android:layout_width="50dp"
+        style="@style/TextView"
+        android:text="编号" />
+    <TextView
+        android:id="@+id/list_subject"
+        android:layout_width="90dp"
+        style="@style/TextView"
+        android:text="主题"
+        />
+    <TextView
+        android:id="@+id/list_body"
+        android:layout_width="100dp"
+        android:text="内容"
+        style="@style/TextView"
+        />
+
+    <TextView
+        android:id="@+id/list_date"
+        android:layout_width="100dp"
+        style="@style/TextView"
+        android:text="时间"
+        />
+
+</LinearLayout>

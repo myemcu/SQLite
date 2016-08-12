@@ -12,7 +12,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
             "create table memento_db(_id integer primary"+"key autoincrement, mSubject, mBody, mDate)";*/
 
     final String CREATE_TABLE_SQL=
-            "create table memento_tb(_id integer primary " +
+            "create table myTable_db(_id integer primary " +
                     "key autoincrement,subject,body,date)";
 
     // 构造器

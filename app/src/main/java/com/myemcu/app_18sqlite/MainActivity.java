@@ -82,7 +82,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            myDBHelper = new MyDBHelper(MainActivity.this,"memento.db",null,1); // 创建数据库辅助类
+
+            myDBHelper = new MyDBHelper(MainActivity.this,"myTable.db",null,1); // 创建数据库辅助类
             db = myDBHelper.getReadableDatabase();                              // 获取SQLite数据库
 
             String subStr  = mSubject.getText().toString();                      // 获取编辑框内容
@@ -118,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
     // 插入数据库
     private void addMemento(SQLiteDatabase db, String subStr, String bodyStr, String dateStr) {
 
-        db.execSQL("insert into memento_tb values(null,?,?,?)", new String[]{subStr, bodyStr, dateStr});
+        db.execSQL("insert into myTable_db values(null,?,?,?)", new String[]{subStr, bodyStr, dateStr});
 
         this.mSubject.setText("");  // 添加数据后，将所有编辑框清空
         this.mBody.setText("");
@@ -128,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
     // 查询数据库
     private Cursor queryMemento(SQLiteDatabase db, String subStr, String bodyStr, String dateStr) {
 
-        Cursor cursor = db.rawQuery("select * from memento_tb where subject like ? and body like ? and date like ?",
+        Cursor cursor = db.rawQuery("select * from myTable_db where subject like ? and body like ? and date like ?",
                                     new String[]{"%"+subStr+"%","%"+bodyStr+"%","%"+dateStr+"%"});
         return cursor;
     }
